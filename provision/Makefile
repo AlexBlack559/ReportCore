@@ -2,12 +2,12 @@
 TEX=texi2pdf
 
 all:
-	$(TEX) collocore/core.tex
+	$(TEX) ReportCore/core.tex
 	@if [ ! -d 'out' ];    \
 		then mkdir 'out'; \
 	fi
-	@if [ ! -d 'src' ];    \
-		then mkdir 'src'; \
+	@if [ ! -d 'src' ]; then \
+	 mkdir 'src'; \
 	fi
 	@if [ ! -d 'src/include' ];    \
 		then mkdir 'src/include'; \

@@ -11,8 +11,8 @@
 !src/img/*.gif
 !src/img/*.jp*g
 
-!src/tickets/
-!src/tickets/*.tex
+!src/contents/
+!src/contents/*.tex
 
 !src/include/
 !src/include/*.tex

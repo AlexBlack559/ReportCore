@@ -1,23 +1,13 @@
-[![GitHub issues](https://img.shields.io/github/issues/taxnuke/collocore.svg)](https://github.com/taxnuke/collocore/issues)
-[![GitHub license](https://img.shields.io/github/license/taxnuke/collocore.svg)](https://github.com/taxnuke/collocore/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/taxnuke/collocore.svg)](https://github.com/AlexBlack559/ReportCore/issues)
+[![GitHub license](https://img.shields.io/github/license/taxnuke/collocore.svg)](https://github.com/AlexBlack559/ReportCore/blob/master/LICENSE)
 
-## Ядро для вёрстки билетов к экзаменам в LaTeX
+## Ядро для создания отчетов в LaTeX
 
 > Обратная совместимость не гарантируется, поэтому если какой-то проект использует более старую версию, то лучше её и использовать
 
 ### Инструкция по применению
 
-Допустим, что предстоит экзамен по вычислительной математике. Нужно:
-
-0. создать директорию для нового проекта (например `~/Uni/calc`)
-
-0. поместить в неё файл со списком билетов (например `tickets.txt`), где каждый билет начинается с новой строки (+ пустая строка в конце файла)
-
-0. клонировать в эту директорию само ядро с помощью `git clone https://github.com/taxnuke/collocore.git`
-
-0. для инициализации проекта выполнить `./collocore/init.sh <путь к списку билетов>`
-
-0. для перегонки билетов в карточки списка Trello выполнить `./collocore/trello.js --file <путь к списку билетов> --key <ключ_API_Trello> --token <токен_API_Trello> --list <ID_списка_Trello> [-n]` (ключ `-n` для автоматической нумерации карточек)
+Для инициализации проекта выполнить `./collocore/init.sh`
 
 
 ### Устройство collocore, назначение директорий, файлы подключения библиотек и тд.
@@ -30,16 +20,9 @@
 | `structs.tex`  | форматы нумерации и всё, что определяет структуру документа  |
 | `provision`    | "провизия" для автоматической генерации новых проектов       |
 | `init.sh`      | скрипт создания нового проекта для использования с collocore |
-| `trello.js`    | скрипт создания карточек для билетов в Trello                |
 
 ### Конфигурирование
 
 Чтобы всё работало, у проекта, который это ядро использует, должен быть файл `config.tex`. Примерное содержание данного файла:
 
-![config.tex](https://i.imgur.com/v8r5dDB.png)
-
-В примере выше указаны 8 билетов, они автоматически подтянутся из дирекотрии `src/tickets` по соответствующим именам файлов, а также конфигурация, в которой нужно рендерить проект, в текущей версии поддерживаются Apple Watch, лист формата А4, средний экран телефона, режим отладки с большим полем для аннотаций, и микропечать.
-
-### Почему "Collocore"?
-
-Потому что изначально было создано для подготовки к однотипным коллоквиумам по высшей математике.
+<!-- ![config.tex](https://i.imgur.com/v8r5dDB.png) -->

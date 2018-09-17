@@ -4,77 +4,26 @@
 \input{custom.tex}
 \input{config.tex}
 
-\ifthenelse{\equal{\targetDevice}{watch}}{
-    \geometry{
-        papersize={104mm,130mm},
-        right=5mm,
-        left=5mm,
-        top=5mm,
-        bottom=5mm,
-    }
-}{}
-
-\ifthenelse{\equal{\targetDevice}{print}}{
-    \geometry{
-        papersize={21cm,29.7cm},
-        right=10mm,
-        left=10mm,
-        top=15mm,
-        bottom=15mm,
-    }
-}{}
-
-\ifthenelse{\equal{\targetDevice}{microprint}}{
-    \geometry{
-        papersize={21cm,29.7cm},
-        right=5mm,
-        left=5mm,
-        top=5mm,
-        bottom=5mm,
-    }
-}{}
-
-\ifthenelse{\equal{\targetDevice}{debug}}{
-    \geometry{
-        papersize={21cm,29.7cm},
-        right=35mm,
-        left=5mm,
-        top=15mm,
-        bottom=15mm,
-    }
-}{}
-
-\ifthenelse{\equal{\targetDevice}{phone}}{
-    \geometry{
-        papersize={70mm,110mm},
-        right=5mm,
-        left=5mm,
-        top=5mm,
-        bottom=5mm,
-    }
-}{}
+\geometry{
+    papersize={21cm,29.7cm},
+    right=10mm,
+    left=10mm,
+    top=15mm,
+    bottom=15mm,
+}
 
 \begin{document}
     \sloppy
     \input{structs.tex}
 
-    \ifthenelse{\equal{\targetDevice}{watch}}{
-        \large
-    }{}
+    \thispagestyle{empty}
+    \begin{center}
+        \univeristyName{} \\
+        \facultyName{} \\
+        \bfseries{\departmentName{}} \\
+    \end{center}
 
-    \ifthenelse{\equal{\targetDevice}{microprint}}{
-        \Large
-        \boldmath
-    }{}
+    \newpage
+    \input{src/main.tex}
 
-    \setcounter{section}{\startTicket - 1}
-
-    \part{Билеты}
-        \foreach \ticketNumber in {\startTicket,...,\endTicket}
-        {
-            \input{src/tickets/\ticketNumber.tex}
-            \iftoggle{paginate}{
-                \newpage
-            }
-        }
 \end{document}
